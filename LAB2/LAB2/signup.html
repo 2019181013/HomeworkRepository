@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Signup</title>
+        <link rel = "stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1>Welcome to INTERNET-PROGRAMMING SHOP</h1>
+        <!-- turn autocomplete on-->
+        <form method = "get" autocomplete="on" action="">
+            <p><label>로그인   회원가입</label></p>
+            <hr width = 100% color = "black" >
+            <p><label>개인정보 (필수)</label></p>
+            <div>
+            <p><label>
+                이름:
+                <input type = "text" name = "name" placeholder="이름을 입력하세요" autofocus/>
+            </label></p>
+            <p><label>
+                생일:
+                <input name = "date" type ="date"/>
+            </label></p>
+            <p><label>
+                학년:
+                <label>1</label>
+                <input type = "radio" name = "grade"  value = "1">
+                <label>2</label>
+                <input type = "radio" name = "grade"  value = "2">
+                <label>3</label>
+                <input type = "radio" name = "grade"  value = "3">
+                <label>4</label>
+                <input type = "radio" name = "grade"  value = "4">
+            </label></p>
+            <p><label>
+                이 사이트에 들어오게 된 경로:
+                <label>SNS</label>
+                <input type = "checkbox" name = "경로" value="SNS">
+                <label>지인 추천</label>
+                <input type = "checkbox" name = "경로" value="지인 추천">
+                <label>웹 검색</label>
+                <input type = "checkbox" name = "경로" value="웹 검색">
+                <label>광고</label>
+                <input type = "checkbox" name = "경로" value="광고">
+                <label>기타</label>
+                <input type = "checkbox" name = "경로" value="기타">
+            </label>
+            <p><label>
+                전화번호:
+                <input type = "tel" name = "telephone" placeholder="(###) ###-####" required/>
+            </label></p>
+            <p><label>
+                유저 아이디:
+                <input type = "text" name = "userId" placeholder="아이디를 입력하세요"/>
+            </label></p>
+            <p><label>
+                <span class = "dark">비밀번호:</span>
+                <input type = "text" name = "password" placeholder="비밀번호 입력하세요"/>
+            </label></p>
+            <p><label>
+                비밀번호 확인:
+                <input type = "text" name = "passwordCheck" placeholder="비밀번호 확인"/>
+            </label></p>
+            <p>
+                <label>관심 카테고리:
+                    <select name = "categories">
+                        <option selected>문구/도서</option>
+                        <option>패션</option>
+                        <option>스포츠</option>
+                        <option>생활/주방</option>
+                        <option>가구/인테리어</option>
+                        <option>식품</option>
+
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>희망 배송 시간
+                    <input name = "deliveryTime" type ="time" min="09:00" max="21:00" step="900"  value="00:00">
+                </label>
+            </p>
+        </div>
+            <p>
+                <input type="submit" value = "Signup">
+                <input type="reset" value = "Clear">
+            </p>
+        </form>
+    </body>
+</html>
