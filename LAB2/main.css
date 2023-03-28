@@ -1,0 +1,43 @@
+/* External style sheet */
+body        {background-color:rgb(247, 241, 229);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow';}
+
+
+h1          {color:rgb(76, 75, 22);
+            font-family: 'Delicious Handrawn', cursive;
+            text-align: center;
+            font-size: 25pt;}
+
+h2          {color:rgb(231, 177, 10);
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+            font-size: 12pt;
+            text-align: center;}
+
+
+p           {color:black;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 14pt;
+            margin-bottom: 0.5em;
+            padding: .5em;
+            text-align: left;
+            line-height: 10%;}
+
+
+div         {border: 3px #898121;
+            padding: 5px 20px; background: 9DC08B;
+            text-align: left;
+            height: 60%;}
+
+
+.atext        {font-size: 18pt;
+            color: black; height: 200%; font-size: 20px;}
+
+.submit-btn{width: 120px;
+            font-size: 14px;
+            color: rgb(76, 75, 22);
+            background-color:rgb(231, 177, 10);
+            padding: 10px;
+            margin-bottom:15px;
+            border-radius: 5px;
+            border: none;}
