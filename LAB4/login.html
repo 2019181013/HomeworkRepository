@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+    </head>
+    <body>
+        <h1>Welcome to INTERNET-PROGRAMMING SHOP</h1>
+        <!-- turn autocomplete on-->
+        <form method="get" autocomplete="on" action="">
+            <div class="flex-container">
+                <a href="#" onclick="location.href='index.html'" >메인페이지</a>
+                <a href="#" onclick="location.href='login.html'" >로그인</a>
+                <a href="#" onclick="location.href='signup.html'">회원가입</a>
+            </div>
+        </form>
+        <hr width = 100% color = "black" >
+            <div>
+            <p><label>회원 정보 (필수)</label></p>
+            <p><label>
+                유저 아이디:    &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" name = "userID" placeholder="아이디를 입력하세요" class="atext"/>
+            </label></p>
+            <p><label>
+                비밀번호:    &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" name = "password" placeholder="비밀번호 입력하세요" class="atext"/>
+            </label></p>
+            <p><label>
+                비밀번호 확인:    &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" name = "passwordCheck" placeholder="비밀번호 확인" class="atext"/>
+            </label></p>
+        </div>
+            <p>
+                <input type="submit" value = "로그인" class="submit-btn">
+                <input type="reset" value = "회원가입" class="submit-btn">
+            </p>
+        </form>
+    </body>
+</html>
