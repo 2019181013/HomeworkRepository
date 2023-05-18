@@ -3,8 +3,7 @@ function show_products() {
     .then(function(response){
         return response.json();
     })
+    .then((items => {
+        console.log(items);
+    }));
 }
-
-show_products().then((items => {
-    console.log(items);
-}));
