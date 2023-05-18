@@ -1,0 +1,58 @@
+{"items":[
+    {
+        "id" : 1,
+        "name" : "nike hoodies",
+        "price" : 120000,
+        "img_url" : "https://1746b291a6740af9.kinxzone.com/upload/images/product/100/100546/Product_1612590314562.jpg"
+
+    },
+    {
+        "id" : 2,
+        "name" : "nike cap",
+        "price" : 40000,
+        "img_url" : "https://image.msscdn.net/images/goods_img/20190712/1094690/1094690_1_500.jpg"
+    },
+    {
+        "id" : 3,
+        "name" : "nike pants",
+        "price" : 80000,
+        "img_url" : "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/1eace967-9bc1-43fe-bb32-5c75f9ced5b9/드라이-핏-남성-테이퍼드-트레이닝-팬츠-TW3pSeu5.png"
+    },
+    {
+        "id" : 4,
+        "name" : "adidas zipup",
+        "price" : 150000,
+        "img_url" : "https://mstatic1.e-himart.co.kr/contents/goods/00/18/89/82/37/0018898237__BH-FM3804__M_640_640.jpg"
+    },
+    {
+        "id" : 5,
+        "name" : "adidas slippers",
+        "price" : 23000,
+        "img_url" : "https://contents.lotteon.com/itemimage/_v112917/LO/19/55/86/53/83/_1/95/58/65/38/4/LO1955865383_1955865384_1.jpg/dims/optimize/dims/resizemc/400x400"
+    },
+    {
+        "id" : 6,
+        "name" : "adidas soccer shoes",
+        "price" : 170000,
+        "img_url" : "https://sitem.ssgcdn.com/97/07/89/item/1000453890797_i1_1100.jpg"
+    },
+    {
+        "id" : 7,
+        "name" : "underarmor hearband",
+        "price" : 25000,
+        "img_url" : "https://image.msscdn.net/images/goods_img/20200904/1583707/1583707_2_500.jpg"
+    },
+    {
+        "id" : 8,
+        "name" : "underarmor shirts",
+        "price" : 350000,
+        "img_url" : "https://sportsdirect.co.kr/web/product/big/201707/2672_shop1_715294.jpg"
+    },
+    {
+        "id" : 9,
+        "name" : "underarmor bag",
+        "price" : 89000,
+        "img_url" : "https://contents.lotteon.com/itemimage/_v140157/LO/16/87/39/93/55/_1/68/73/99/35/6/LO1687399355_1687399356_1.jpg/dims/optimize/dims/resizemc/400x400"
+    }
+]
+}

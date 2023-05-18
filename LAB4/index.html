@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <h1 class="header">Welcome to INTERNET-PROGRAMMING SHOP</h1>
+    <form method="get" autocomplete="on" action="">
+        <div class="flex-container">
+            <a href="#" onclick="location.href='index.html'">메인페이지</a>
+            <a href="#" onclick="location.href='login.html'">로그인</a>
+            <a href="#" onclick="location.href='signup.html'">회원가입</a>
+        </div>
+    </form>
+    <hr width=100% color="black">
+    <!-- <div class="main_content">
+            <div class="extra">
+                <div class="image_title">
+                    <h2>인기 상품</h2>
+                </div>
+                <div class="image">
+                    <div class="product">
+                        <img src="./나이키후드티.png" alt="나이키 후드티">
+                        <p>나이키 후드티</p>
+                    </div>
+                    <div class="product">
+                        <img src="./웹표준의정석.png" alt="DoIt 웹 표준의 정석">
+                        <p>DoIt 웹 표준의 정석</p>
+                    </div>
+                    <div class="product">
+                        <img src="./로봇청소기.png" alt="로봇청소기">
+                        <p>로봇청소기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="intro">
+                <div class="extra2">
+                    <h4>인프몰 소개</h4>
+                    <h5>안녕하세요. 저희 인프몰은 이번에 새롭게 오픈했습니다. 현재 보이시는 상품들은 이번주 인기상품들입니다. 편하게 구경하세요!~</h5>
+                </div>
+            </div>
+          </div>
+        </div> -->
+    <div>
+        <h2>상품 목록</h2>
+        <div class="category">
+            <p>
+                <label>카테고리 목록: <br>
+                    <select name="brand" class="category_width">
+                        <option selected>All</option>
+                        <option>나이키</option>
+                        <option>아디다스</option>
+                        <option>언더아머</option>
+                    </select>
+                </label>
+            </p>
+            <p><label>키워드 검색:<br>
+                    <input type="text" name="term" placeholder="e.g. 나이키" class="category_width" /></label>
+            </p>
+            <p>
+                <label>정렬: <br>
+                    <select name="price order" class="category_width">
+                        <option selected>X</option>
+                        <option>가격 높은순</option>
+                        <option>가격 낮은순</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <input type="submit" value="확인" class="category_width">
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
