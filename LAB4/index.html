@@ -12,20 +12,22 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <script>
-    function showItems(){
-        return fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
-        .then((response) => response.json())
-        .then((json) => json.items)
-    }
-    showItems().then((items) => {
-            const imageContainer = document.getElementById("imageContainer");
+    async function showProducts() {
+            let response = await fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
+            let json = await response.json()
+            await console.log(json.items);
 
-            items.forEach((item) => {
-                const img = document.createElement("img");
-                img.src = item.img_url;
-                imageContainer.appendChild(img);
-            });
-        });
+            for (let item of json.items) {
+                const div = document.createElement('div');
+                div.classList.add('goods');
+                div.innerHTML = `
+                <img src="${item.image_url}" alt="${item.name}">
+                <p>${item.price}</p>
+                `;
+                document.getElementById('goods_container_div').appendChild(div)
+            }
+        }
+        showProducts();
 </script>
 <body>
     <h1 class="header">Welcome to INTERNET-PROGRAMMING SHOP</h1>
@@ -93,8 +95,7 @@
             <p>
                 <input type="submit" value="확인" class="category_width">
             </p>
-        </div>
-        <div id="imageContainer" class="image"></div>
+        </div id = "goods_div"><div id="goods"></div>
     </div>
 </body>
 
