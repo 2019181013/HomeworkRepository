@@ -11,7 +11,22 @@
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
+<script>
+    function showItems(){
+        return fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
+        .then((response) => response.json())
+        .then((json) => json.items)
+    }
+    showItems().then((items) => {
+            const imageContainer = document.getElementById("imageContainer");
 
+            items.forEach((item) => {
+                const img = document.createElement("img");
+                img.src = item.img_urls;
+                imageContainer.appendChild(img);
+            });
+        });
+</script>
 <body>
     <h1 class="header">Welcome to INTERNET-PROGRAMMING SHOP</h1>
     <form method="get" autocomplete="on" action="">
@@ -79,6 +94,7 @@
                 <input type="submit" value="확인" class="category_width">
             </p>
         </div>
+        <div id="imageContainer" class="image"></div>
     </div>
 </body>
 
