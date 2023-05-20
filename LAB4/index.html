@@ -12,22 +12,33 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <script>
-    async function showProducts() {
-            let response = await fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
-            let json = await response.json()
-            await console.log(json.items);
-
-            for (let item of json.items) {
-                const div = document.createElement('div');
-                div.classList.add('products');
-                div.innerHTML = `
-                <img src="${item.image_url}" alt="${item.name}">
-                <p>${item.price}</p>
-                `;
-                document.getElementById('products_container_div').appendChild(div)
+    function getItems(){
+        fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not OK");
             }
+            return response.json();
+        })
+        .then((json) => {
+            const items = json.items;
+            console.log(items);
+        })
+        .catch((error) => {
+            console.error("Error fetching JSON:", error);
+        });
+
+        for (let item of json.items) {
+            const div = document.createElement('div');
+            div.classList.add('goods');
+            div.innerHTML = `
+                <img src="${item.image_url}" alt="${item.name}">
+                <p>${item.price}</p>`;
+            document.getElementById('main_content').appendChild(div)
         }
-        showProducts();
+        }
+    getItems();
+
 </script>
 <body>
     <h1 class="header">Welcome to INTERNET-PROGRAMMING SHOP</h1>
@@ -39,64 +50,36 @@
         </div>
     </form>
     <hr width=100% color="black">
-    <!-- <div class="main_content">
-            <div class="extra">
-                <div class="image_title">
-                    <h2>인기 상품</h2>
-                </div>
-                <div class="image">
-                    <div class="product">
-                        <img src="./나이키후드티.png" alt="나이키 후드티">
-                        <p>나이키 후드티</p>
-                    </div>
-                    <div class="product">
-                        <img src="./웹표준의정석.png" alt="DoIt 웹 표준의 정석">
-                        <p>DoIt 웹 표준의 정석</p>
-                    </div>
-                    <div class="product">
-                        <img src="./로봇청소기.png" alt="로봇청소기">
-                        <p>로봇청소기</p>
-                    </div>
-                </div>
-            </div>
-            <div class="intro">
-                <div class="extra2">
-                    <h4>인프몰 소개</h4>
-                    <h5>안녕하세요. 저희 인프몰은 이번에 새롭게 오픈했습니다. 현재 보이시는 상품들은 이번주 인기상품들입니다. 편하게 구경하세요!~</h5>
-                </div>
-            </div>
-          </div>
-        </div> -->
     <div>
         <h2>상품 목록</h2>
         <div class="category">
             <p>
                 <label>카테고리 목록: <br>
-                    <select name="brand" class="category_width">
-                        <option selected>All</option>
-                        <option>나이키</option>
-                        <option>아디다스</option>
-                        <option>언더아머</option>
+                    <select id="category" name="brand" class="category_width">
+                        <option selected value="All">All</option>
+                        <option value="나이키">나이키</option>
+                        <option value="아디다스">아디다스</option>
+                        <option value="언더아머">언더아머</option>
                     </select>
                 </label>
             </p>
             <p><label>키워드 검색:<br>
-                    <input type="text" name="term" placeholder="e.g. 나이키" class="category_width" /></label>
+                    <input onchange="order()" type="text" name="order" placeholder="e.g. 나이키" class="category_width" /></label>
             </p>
             <p>
                 <label>정렬: <br>
-                    <select name="price order" class="category_width">
-                        <option selected>X</option>
-                        <option>가격 높은순</option>
-                        <option>가격 낮은순</option>
+                    <select id="order" name="price order" class="category_width">
+                        <option selected value="none">X</option>
+                        <option value="가격 높은 순">가격 높은순</option>
+                        <option value="가격 낮은 순">가격 낮은순</option>
                     </select>
                 </label>
             </p>
             <p>
-                <input type="submit" value="확인" class="category_width">
+                <input type="submit" onclick="submit()" value="확인" class="category_width">
             </p>
-        </div id = "products_div"><div id="products"></div>
+    </div>
+    <div id="main_content" class="main_content">
     </div>
 </body>
-
 </html>
