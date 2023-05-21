@@ -12,22 +12,49 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <script>
-    async function getItems(){
-        let response = await fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json")
-            let json = await response.json()
-            await console.log(json.products);
+    //json 파일 불러오기
+    async function getProducts() {
+    let response = await fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json");
+    let json = await response.json();
+    await console.log(json.items);
 
-        for (let item of json.items) {
-            const div = document.createElement('div');
-            div.classList.add('products');
-            div.innerHTML = `
-                <img src="${item.img_url}" alt="${item.name}">
-                <p>${item.price}</p>`;
-            document.getElementById('main_content').appendChild(div)
+    const mainContent = document.getElementById('main_content');
+
+    function createProductElement(item) {
+        const div = document.createElement('div');
+        div.classList.add('products');
+        div.innerHTML = `
+        <img src="${item.img_url}" alt="${item.name}">
+        <p>${item.price}<br/>${item.name}<br/>${item.brand}</p>
+        `;
+        return div;
+    }
+
+        function loadMoreItems() {
+        const startIndex = mainContent.children.length;
+        const endIndex = startIndex + 2;
+        for (let i = startIndex; i < endIndex && i < json.items.length; i++) {
+        const item = json.items[i];
+        const productElement = createProductElement(item);
+        mainContent.appendChild(productElement);
+        
         }
-        }
-    getItems();
-    
+    }
+  
+  loadMoreItems();
+
+  window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      loadMoreItems();
+    }
+  };
+}
+
+getProducts();
+
+
+    getProducts();
+
 
 </script>
 <body>
@@ -54,7 +81,7 @@
                 </label>
             </p>
             <p><label>키워드 검색:<br>
-                    <input onchange="order()" type="text" name="order" placeholder="e.g. 나이키" class="category_width" /></label>
+                    <input type="text" id="myButton" placeholder="e.g. nike 영어로" class="category_width" /></label>
             </p>
             <p>
                 <label>정렬: <br>
@@ -66,7 +93,7 @@
                 </label>
             </p>
             <p>
-                <input type="submit" onclick="submit()" value="확인" class="category_width">
+                <input type="submit" onchange="order" id="sort_button" value="확인" class="category_width">
             </p>
         </div>
         <div id="main_content" class="main_content"></div>
