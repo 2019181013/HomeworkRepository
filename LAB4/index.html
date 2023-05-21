@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<script>
+    //json 파일 불러오기
+    async function getProducts() {
+    let response = await fetch("https://2019181013.github.io/HomeworkRepository/LAB4/product.json");
+    let json = await response.json();
+    await console.log(json.items);
+
+    const mainContent = document.getElementById('main_content');
+
+    function createProductElement(item) {
+        const div = document.createElement('div');
+        div.classList.add('products');
+        div.innerHTML = `
+        <img src="${item.img_url}" alt="${item.name}">
+        <p>${item.price}<br/>${item.name}<br/>${item.brand}</p>
+        `;
+        return div;
+    }
+
+        function loadMoreItems() {
+        const startIndex = mainContent.children.length;
+        const endIndex = startIndex + 2;
+        for (let i = startIndex; i < endIndex && i < json.items.length; i++) {
+        const item = json.items[i];
+        const productElement = createProductElement(item);
+        mainContent.appendChild(productElement);
+        
+        }
+    }
+  
+  loadMoreItems();
+
+  window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      loadMoreItems();
+    }
+  };
+}
+
+getProducts();
+
+
+    getProducts();
+
+
+</script>
+<body>
+    <h1 class="header">Welcome to INTERNET-PROGRAMMING SHOP</h1>
+    <form method="get" autocomplete="on" action="">
+        <div class="flex-container">
+            <a href="#" onclick="location.href='index.html'">메인페이지</a>
+            <a href="#" onclick="location.href='login.html'">로그인</a>
+            <a href="#" onclick="location.href='signup.html'">회원가입</a>
+        </div>
+    </form>
+    <hr width=100% color="black">
+    <h2>상품 목록</h2>
+    <div class = "extra">
+        <div class="category">
+            <p>
+                <label>카테고리 목록: <br>
+                    <select id="category" name="brand" class="category_width">
+                        <option selected value="All">All</option>
+                        <option value="nike">나이키</option>
+                        <option value="adidas">아디다스</option>
+                        <option value="underarmor">언더아머</option>
+                    </select>
+                </label>
+            </p>
+            <p><label>키워드 검색:<br>
+                    <input type="text" id="myButton" placeholder="e.g. nike 영어로" class="category_width" /></label>
+            </p>
+            <p>
+                <label>정렬: <br>
+                    <select id="order" name="price order" class="category_width">
+                        <option selected value="none">X</option>
+                        <option value="가격 높은 순">가격 높은순</option>
+                        <option value="가격 낮은 순">가격 낮은순</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <input type="submit" onchange="order" id="sort_button" value="확인" class="category_width">
+            </p>
+        </div>
+        <div id="main_content" class="main_content"></div>
+    </div>
+</body>
+</html>
